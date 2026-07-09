@@ -1,0 +1,680 @@
+/* ==========================================================
+   HAPPY BIRTHDAY PROJECT
+   STYLE.CSS
+========================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,
+body{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    font-family:'Poppins',sans-serif;
+}
+
+/* ==========================================================
+   BACKGROUND
+========================================================== */
+
+body{
+
+    background:linear-gradient(
+        135deg,
+        #ffdde1,
+        #ee9ca7,
+        #fbc2eb,
+        #a18cd1
+    );
+
+    background-size:400% 400%;
+
+    animation:gradientMove 18s ease infinite;
+
+}
+
+/* ==========================================================
+   GRADIENT ANIMATION
+========================================================== */
+
+@keyframes gradientMove{
+
+    0%{
+        background-position:0% 50%;
+    }
+
+    50%{
+        background-position:100% 50%;
+    }
+
+    100%{
+        background-position:0% 50%;
+    }
+
+}
+
+/* ==========================================================
+   BACKGROUND LAYERS
+========================================================== */
+
+#background{
+
+    position:fixed;
+
+    inset:0;
+
+    overflow:hidden;
+
+    z-index:0;
+
+}
+
+#stars,
+#balloons,
+#hearts{
+
+    position:absolute;
+
+    inset:0;
+
+}
+
+/* ==========================================================
+   GLASS CARD
+========================================================== */
+
+.glass-card{
+
+    backdrop-filter:blur(18px);
+
+    background:rgba(255,255,255,.25);
+
+    border:1px solid rgba(255,255,255,.4);
+
+    box-shadow:
+
+        0 10px 40px rgba(0,0,0,.15),
+
+        0 0 30px rgba(255,255,255,.25);
+
+    transition:.4s;
+
+}
+
+.glass-card:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:
+
+        0 20px 50px rgba(0,0,0,.25),
+
+        0 0 40px rgba(255,255,255,.35);
+
+}
+
+/* ==========================================================
+   BUTTON
+========================================================== */
+
+button{
+
+    transition:.35s;
+
+    cursor:pointer;
+
+}
+
+button:hover{
+
+    transform:scale(1.05);
+
+}
+
+button:active{
+
+    transform:scale(.97);
+
+}
+
+/* ==========================================================
+   CANVAS
+========================================================== */
+
+#cakeArea{
+
+    display:flex;
+
+    flex-direction:row;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:30px;
+
+    width:100%;
+
+    max-width:1000px;
+
+}
+
+#cakeCanvas{
+
+    width:100%;
+
+    max-width:600px;
+
+    height:auto;
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,.15);
+
+    backdrop-filter:blur(10px);
+
+    border:2px solid rgba(255,255,255,.25);
+
+    box-shadow:
+
+        0 15px 40px rgba(0,0,0,.25);
+
+}
+
+#cameraPreview{
+
+    position:relative;
+
+    width:220px;
+
+    height:220px;
+
+    border-radius:50%;
+
+    overflow:hidden;
+
+    border:4px solid white;
+
+    box-shadow:
+
+        0 15px 40px rgba(0,0,0,.25),
+
+        0 0 20px rgba(255,105,180,.4);
+
+    background:rgba(0,0,0,.2);
+
+    display:none; /* Hidden until camera starts */
+
+    flex-shrink:0;
+
+}
+
+#video{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    transform:scaleX(-1); /* Mirror camera */
+
+}
+
+#cameraLabel{
+
+    position:absolute;
+
+    bottom:15px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    background:rgba(0,0,0,.6);
+
+    color:white;
+
+    padding:4px 12px;
+
+    border-radius:20px;
+
+    font-size:14px;
+
+    backdrop-filter:blur(4px);
+
+}
+
+/* ==========================================================
+   STATUS
+========================================================== */
+
+#status{
+
+    margin-top:20px;
+
+    font-size:18px;
+
+    color:white;
+
+    text-shadow:
+
+        0 0 10px rgba(0,0,0,.4);
+
+}
+
+/* ==========================================================
+   ENDING SECTION
+========================================================== */
+
+#endingSection{
+
+    animation:fadeIn 1s ease;
+
+}
+
+/* ==========================================================
+   FADE ANIMATIONS
+========================================================== */
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(25px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+.fadeOut{
+
+    animation:fadeOut .8s forwards;
+
+}
+
+@keyframes fadeOut{
+
+    to{
+
+        opacity:0;
+
+    }
+
+}
+
+/* ==========================================================
+   HEARTS
+========================================================== */
+
+.heart{
+
+    position:absolute;
+
+    font-size:24px;
+
+    animation:heartFloat linear forwards;
+
+    pointer-events:none;
+
+}
+
+@keyframes heartFloat{
+
+    from{
+
+        transform:
+
+            translateY(100vh)
+
+            scale(.5);
+
+        opacity:0;
+
+    }
+
+    15%{
+
+        opacity:1;
+
+    }
+
+    to{
+
+        transform:
+
+            translateY(-120px)
+
+            scale(1.2)
+
+            rotate(15deg);
+
+        opacity:0;
+
+    }
+
+}
+
+/* ==========================================================
+   BALLOONS
+========================================================== */
+
+.balloon{
+
+    position:absolute;
+
+    font-size:42px;
+
+    animation:balloonRise linear forwards;
+
+}
+
+@keyframes balloonRise{
+
+    from{
+
+        transform:
+
+            translateY(120vh);
+
+    }
+
+    to{
+
+        transform:
+
+            translateY(-150px);
+
+    }
+
+}
+
+/* ==========================================================
+   STARS
+========================================================== */
+
+.star{
+
+    position:absolute;
+
+    width:3px;
+
+    height:3px;
+
+    border-radius:50%;
+
+    background:white;
+
+    animation:twinkle infinite alternate;
+
+}
+
+@keyframes twinkle{
+
+    from{
+
+        opacity:.2;
+
+        transform:scale(.8);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1.8);
+
+    }
+
+}
+
+/* ==========================================================
+   TYPEWRITER CURSOR
+========================================================== */
+
+.cursor{
+
+    display:inline-block;
+
+    width:2px;
+
+    height:1em;
+
+    background:#ff4081;
+
+    animation:blink .8s infinite;
+
+}
+
+@keyframes blink{
+
+    50%{
+
+        opacity:0;
+
+    }
+
+}
+
+/* ==========================================================
+   GLOW
+========================================================== */
+
+.glow{
+
+    animation:glow 2s infinite alternate;
+
+}
+
+@keyframes glow{
+
+    from{
+
+        filter:drop-shadow(0 0 5px #fff);
+
+    }
+
+    to{
+
+        filter:
+
+            drop-shadow(0 0 25px #fff)
+
+            drop-shadow(0 0 45px pink);
+
+    }
+
+}
+
+/* ==========================================================
+   SHAKE
+========================================================== */
+
+.shake{
+
+    animation:shake .3s;
+
+}
+
+@keyframes shake{
+
+    0%{
+
+        transform:translateX(0);
+
+    }
+
+    25%{
+
+        transform:translateX(-5px);
+
+    }
+
+    50%{
+
+        transform:translateX(5px);
+
+    }
+
+    75%{
+
+        transform:translateX(-5px);
+
+    }
+
+    100%{
+
+        transform:translateX(0);
+
+    }
+
+}
+
+/* ==========================================================
+   SCALE IN
+========================================================== */
+
+.scaleIn{
+
+    animation:scaleIn .6s ease;
+
+}
+
+@keyframes scaleIn{
+
+    from{
+
+        transform:scale(.6);
+
+        opacity:0;
+
+    }
+
+    to{
+
+        transform:scale(1);
+
+        opacity:1;
+
+    }
+
+}
+
+/* ==========================================================
+   FLOAT
+========================================================== */
+
+.float{
+
+    animation:floating 3s ease-in-out infinite;
+
+}
+
+@keyframes floating{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-10px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media(max-width:768px){
+
+    h1{
+
+        font-size:2.2rem !important;
+
+    }
+
+    #cakeArea{
+
+        flex-direction:column;
+
+        gap:15px;
+
+    }
+
+    #cakeCanvas{
+
+        width:92vw;
+
+    }
+
+    #cameraPreview{
+
+        width:140px;
+
+        height:140px;
+
+    }
+
+    .glass-card{
+
+        padding:30px 22px;
+
+    }
+
+    p{
+
+        font-size:16px !important;
+
+        line-height:1.8;
+
+    }
+
+}
+
+/* ==========================================================
+   LARGE MONITORS
+========================================================== */
+
+@media(min-width:1400px){
+
+    #cakeCanvas{
+
+        max-width:750px;
+
+    }
+
+    #cameraPreview{
+
+        width:260px;
+
+        height:260px;
+
+    }
+
+}

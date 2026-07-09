@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Happy Birthday ❤️</title>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet"
+          href="Styles.css">
+
+</head>
+
+<body class="overflow-hidden">
+
+    <!-- ===============================
+         Animated Background
+    ================================-->
+
+    <div id="background">
+
+        <div id="stars"></div>
+
+        <div id="balloons"></div>
+
+        <div id="hearts"></div>
+
+    </div>
+
+    <!-- ===============================
+         Main Container
+    ================================-->
+
+    <main class="relative z-20 min-h-screen flex items-center justify-center px-6">
+
+        <div
+            class="glass-card max-w-xl w-full rounded-3xl p-8 md:p-10 text-center">
+
+            <h1
+                class="text-4xl md:text-6xl font-bold text-pink-500 mb-5">
+
+                Happy Birthday ❤️
+
+            </h1>
+
+            <p
+                id="introText"
+                class="text-gray-700 text-lg md:text-xl leading-8">
+
+                Today is all about you my love.
+
+                <br><br>
+
+                Even though we're far apart,
+                I wanted to celebrate this special day with you.
+
+                <br><br>
+
+                Ready to make a wish?
+
+            </p>
+
+            <button
+                id="startButton"
+                class="mt-10 px-8 py-4 rounded-full text-white text-lg font-semibold bg-pink-500 hover:bg-pink-600 transition duration-300 shadow-lg">
+
+                🎂 Start Celebration
+
+            </button>
+
+        </div>
+
+    </main>
+
+    <!-- ===============================
+         Cake Section
+    ================================-->
+
+    <section
+        id="cakeSection"
+        class="hidden absolute inset-0 z-30 flex flex-col items-center justify-center px-4">
+
+        <h2
+            class="text-2xl md:text-4xl font-bold text-pink-600 mb-4">
+
+            Blow the Candles 💨
+
+        </h2>
+
+        <!-- Cake + Camera Container -->
+
+        <div id="cakeArea">
+
+            <!-- Canvas -->
+
+            <canvas
+                id="cakeCanvas"
+                width="700"
+                height="500">
+            </canvas>
+
+            <!-- Camera Preview -->
+
+            <div id="cameraPreview">
+
+                <video
+                    id="video"
+                    autoplay
+                    muted
+                    playsinline>
+                </video>
+
+                <div id="cameraLabel">📷 You</div>
+
+            </div>
+
+        </div>
+
+        <p
+            id="status"
+            class="text-white text-base mt-4">
+
+            Waiting for camera...
+
+        </p>
+
+    </section>
+
+    <!-- ===============================
+         Ending Message
+    ================================-->
+
+    <section
+        id="endingSection"
+        class="hidden absolute inset-0 z-40 flex items-center justify-center">
+
+        <div
+            class="glass-card text-center p-10 rounded-3xl max-w-xl mx-4">
+
+            <h1
+                class="text-4xl md:text-5xl font-bold text-pink-500 mb-6">
+
+                Happy Birthday ❤️
+
+            </h1>
+
+            <p
+                class="text-lg md:text-xl text-gray-700 leading-9">
+
+                I hope all your wishes come true.
+
+                <br><br>
+
+                I can't wait until we celebrate together in person.
+
+                <br><br>
+
+                Love you forever ❤️
+
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- ===============================
+         Hidden Audio
+    ================================-->
+
+    <audio
+        id="birthdaySong"
+        preload="auto">
+        <source src="assets/happy-birth-day-unknown.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- ===============================
+         Libraries
+    ================================-->
+
+    <!-- MediaPipe Camera -->
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js">
+    </script>
+
+    <!-- MediaPipe Face Detection -->
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/@mediapipe/face_detection/face_detection.js">
+    </script>
+
+    <!-- MediaPipe Drawing -->
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js">
+    </script>
+
+    <!-- Confetti -->
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js">
+    </script>
+
+    <!-- ===============================
+         Project Scripts
+    ================================-->
+
+    <script src="js/utils.js"></script>
+
+    <script src="js/particles.js"></script>
+
+    <script src="js/animation.js"></script>
+
+    <script src="js/cake.js"></script>
+
+    <script src="js/audio.js"></script>
+
+    <script src="js/camera.js"></script>
+
+    <script src="js/confetti.js"></script>
+
+    <script src="js/app.js"></script>
+
+</body>
+
+</html>
